@@ -35,6 +35,7 @@ function getCountryByName(e) {
       }
     })
     .catch(error => {
+      clearViewPort();
       Notify.warning('А зась тобі? Нормально запитай');
     });
 }
