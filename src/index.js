@@ -3,7 +3,7 @@ import { Notify } from 'notiflix';
 import './css/styles.css';
 import { fetchCountries } from './js/fetchCountries.js';
 import { inputRef } from './js/refs.js';
-import { listMarkup, cardMarkup } from './js/get-markup';
+import { listMarkup, cardMarkup, clearViewPort } from './js/get-markup';
 
 const DEBOUNCE_DELAY = 300;
 
@@ -11,6 +11,7 @@ inputRef.addEventListener('input', debounce(getCountryByName, DEBOUNCE_DELAY));
 
 function getCountryByName(e) {
   if (e.target.value.trim().length === 0) {
+    clearViewPort();
     return;
   }
   fetchCountries(e.target.value.trim())

@@ -34,4 +34,4 @@ function clearViewPort() {
   countryInfoRef.innerHTML = '';
 }
 
-export { listMarkup, cardMarkup };
+export { listMarkup, cardMarkup, clearViewPort };
