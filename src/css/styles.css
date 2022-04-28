@@ -7,7 +7,7 @@ body {
     'Open Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #ececec;
+  background-color: #ebebeb;
   color: #212121;
   line-height: 1.5;
 }
@@ -17,6 +17,7 @@ body {
   padding: 8px;
   max-width: 320px;
   margin-bottom: 16px;
+  margin-left: 40px;
 }
 
 .flag {
@@ -39,7 +40,7 @@ body {
   padding: 20px;
   border-radius: 20px;
 
-  background-color: #e1e0e0;
+  background-color: #dfdfdf;
 }
 .card-flag {
   margin: 0 auto;

@@ -17,10 +17,18 @@ function getCountryByName(e) {
     .then(arr => {
       if (arr.length >= 10) {
         Notify.warning('А не перехочеш!!! Вводь далі');
-      } else if (arr.length > 1 && arr.length < 10) {
+      }
+      return arr;
+    })
+    .then(arr => {
+      if (arr.length > 1 && arr.length < 10) {
         Notify.success('Дай ще інфи');
         listMarkup(arr);
-      } else {
+      }
+      return arr;
+    })
+    .then(arr => {
+      if (arr.length === 1) {
         Notify.success('Ура!!! В тебе вийшло!');
         cardMarkup(arr);
       }
