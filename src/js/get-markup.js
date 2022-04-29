@@ -1,6 +1,5 @@
 import { countriesListRef, countryInfoRef } from './refs.js';
 function listMarkup(arr) {
-  clearViewPort();
   const markup = arr
     .map(({ name, flags }) => {
       return `<li class="country-list__item">
@@ -9,11 +8,10 @@ function listMarkup(arr) {
       </li>`;
     })
     .join('');
-  countriesListRef.innerHTML = markup;
+  updateViewPort('', markup);
 }
 
 function cardMarkup(arr) {
-  clearViewPort();
   const markup = arr.map(({ name, capital, flags, languages, population }) => {
     return ` <div class="country">
         <img src="${flags.svg}" alt="${name.official} flag" class="flag card-flag">
@@ -26,12 +24,12 @@ function cardMarkup(arr) {
       </ul>
     </div>`;
   });
-  countryInfoRef.innerHTML = markup;
+  updateViewPort('', markup);
 }
 
-function clearViewPort() {
-  countriesListRef.innerHTML = '';
-  countryInfoRef.innerHTML = '';
+function updateViewPort(listMarkup = '', divMarkup = '') {
+  countriesListRef.innerHTML = listMarkup;
+  countryInfoRef.innerHTML = divMarkup;
 }
 
-export { listMarkup, cardMarkup, clearViewPort };
+export { listMarkup, cardMarkup, updateViewPort };
